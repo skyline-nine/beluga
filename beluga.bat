@@ -1,60 +1,71 @@
 @echo off
 
-set /A clock=0
-set /A date=0
-set /A logout=0
+cd C:\Users\Hewlett Packard\Desktop\batch filse
 
- 
-title beluga v0.1
+title beluga v0.2
 
 echo hello user welcome to beluga os
-
-
 
 pause
 
 echo opening beluga...
 
-echo welcome to beluga os v0.1
+echo welcome to beluga os v0.2
 
 pause
 :MainMenu
-echo 1:clock
-echo 2:date
-echo 3:logout
-echo please enter the number behind the program that you wish to use
-set /p choice= "Please Select one of the above options :" 
+echo clock
+echo ldate
+echo open FH
+echo logout
+echo clear
+echo upcoming
+set /p choice= "Please Select one of the above options:" 
 
-if %choice%==1 set /A clock+=1
-if %choice%==2 set /A date+=1
-if %choice%==3 set /A logout+=1
-
-if %clock%==1 goto :clock
-if %date%==1 goto :date
-if %logout% = 0 goto :logout
+if %choice%== clock goto :clock
+if %choice%== date  goto :date
+if %choice%== FH  goto :FH
+if %choice%== logout  exit
+if %choice%== clear goto :clear
+if %choice%== upcoming goto :upcoming
 
 :clock
 echo loading clock
 echo %TIME%
 pause
-set /A clock = 0
 echo exiting clock
 goto :MainMenu
+
 :date
 echo loading date
 date /t
 pause
-set /A date = 0 
 echo exiting date
 goto :MainMenu
 
-:logout
-set /p choice= "are you sure"
-
-
-if %choice%=="yes" goto :end
-if %choice%=="no" goto :MainMenu
-
-:end
+:upcoming
+echo hello we are proud to announce that beluga will soon be moving to an new language
+echo we expect it to be aviaible within a month from 5/3/2021 now we shall return you to your main area
 pause
-exit
+goto :MainMenu
+
+:clear
+cls
+goto :MainMenu
+
+:FH
+echo welcome to file hunter
+
+title file hunter 0.1
+
+:menu
+echo 1:locate
+echo 2:exit
+set /p choice= "please pick an option stated above:"
+if %choice%== locate goto :exp
+if %choice%== exit goto :MainMenu
+
+:exp
+set /p dir= "please enter the file name that you wish to go to:"
+start %dir%
+goto :menu
