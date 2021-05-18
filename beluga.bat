@@ -1,7 +1,5 @@
 @echo off
 
-cd C:\Users\Hewlett Packard\Desktop\batch filse
-
 title beluga v0.2
 
 echo hello user welcome to beluga os
