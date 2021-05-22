@@ -30,7 +30,7 @@ set /p choice= "Please Select one of the above options:"
 if %choice%== clock goto :clock
 if %choice%== date  goto :date
 if %choice%== FH  goto :FH
-if %choice%== S goto :S
+if %choice%== WS goto :S
 if %choice%== logout  exit
 if %choice%== clear goto :clear
 if %choice%== upcoming goto :upcoming
