@@ -1,20 +1,27 @@
 @echo off
 
-title beluga v0.2
+cd C:\Users\Hewlett Packard\Desktop\batch filse
+
+title beluga v0.3
 
 echo hello user welcome to beluga os
 
+
+
 pause
 
-echo opening beluga...
 
+
+:start
 echo welcome to beluga os v0.2
 
 pause
 :MainMenu
+title beluga os v0.2
 echo clock
 echo ldate
-echo open FH
+echo open File hunter (FH)
+echo open Web Scraper (WS)
 echo logout
 echo clear
 echo upcoming
@@ -23,6 +30,7 @@ set /p choice= "Please Select one of the above options:"
 if %choice%== clock goto :clock
 if %choice%== date  goto :date
 if %choice%== FH  goto :FH
+if %choice%== S goto :S
 if %choice%== logout  exit
 if %choice%== clear goto :clear
 if %choice%== upcoming goto :upcoming
@@ -54,7 +62,7 @@ goto :MainMenu
 :FH
 echo welcome to file hunter
 
-title file hunter 0.1
+title file hunter 0.3
 
 :menu
 echo 1:locate
@@ -65,5 +73,41 @@ if %choice%== exit goto :MainMenu
 
 :exp
 set /p dir= "please enter the file name that you wish to go to:"
+if exist %dir% goto :open;
+else goto :error;
+
+:open
 start %dir%
+set dir= ""
 goto :menu
+
+:error
+echo i am sorry but you have entered the file name or extension incorrectly please re enter the file name and extension
+goto :exp
+
+:S
+title Web Scraper 0.1
+echo 1:search
+echo 2:exit
+set /p choice= "please pick an option stated above:"
+if %choice%== search goto:search
+if %choice%== exit goto :MainMenu
+:search
+set /p page= "enter your prefered web browser"
+set /p look= "please enter the website that you wish to find"
+set /p aorb= "would you like to do a advanced search or basic search (a/b)"
+if %aorb%== a goto:advanced
+if %aorb%== b goto:basic
+
+:advanced
+set /p dom= "enter your domain extension here (example .com .net)"
+start %page% %look%%dom%
+goto :S
+
+:basic
+start %page% %look%.com
+goto :S
+
+:veri
+start codegen.bat
+exit
