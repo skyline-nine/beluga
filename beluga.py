@@ -11,7 +11,7 @@ now = datetime.now()
 
 # window options
 window = Tk()
-window.title("Beluga")
+window.title("Beluga V0.4")
 window.configure(width=500, height=500)
 window.configure(bg='lightblue')
 
