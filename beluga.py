@@ -5,6 +5,7 @@ import webbrowser
 import tkinter as tk
 from tkinter import ttk
 
+# variables
 
 # find time
 now = datetime.now()
