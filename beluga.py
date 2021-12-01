@@ -4,7 +4,8 @@ from datetime import datetime
 import webbrowser
 import tkinter as tk
 from tkinter import ttk
-
+import os
+from user import *
 # variables
 
 # find time
@@ -12,52 +13,63 @@ now = datetime.now()
 
 # window options
 window = Tk()
-window.title("Beluga V0.4")
+window.title("Beluga V0.6")
 window.configure(width=500, height=500)
 window.configure(bg='lightblue')
+
+# name
+
 
 # display time
 def st():
     messagebox.showinfo("Time", now.strftime("%H:%M:%S"))
 B1 = Button(window, text = "Time", command = st)
+B1.configure(bg='lightblue')
 B1.grid(column=1, row=1)
 
 # display date
 def sd():
     messagebox.showinfo("Date", now.strftime("%Y-%m-%d"))
 B2 = Button(window, text = "Date", command = sd)
+B2.configure(bg='lightblue')
 B2.grid(column=1, row=2)
 
 # Web Sweeper
 def NF():
-    headcrab = Tk()
-    text2 = Entry(headcrab)
+    NF = Tk()
+    text2 = Entry(NF)
     text2.pack()
-    
     text2.focus_set()
     
     def recall():
         webbrowser.open(text2.get())
-    B6 = Button(headcrab, text = "Search", width = 10, command = recall)
-    B6.pack()
+    B7 = Button(NF, text = "Search", width = 10, command = recall)
+    B7.pack()
     
     mainloop()
-
-# Show Button
 B5 = Button(window, text = "Web Sweeper", command = NF)
+B5.configure(bg='lightblue')
 B5.grid(column=1, row=3)
 
-# Misc
+# Project:Mango
+def Mango():
+    os.system("python Mango.py")
+    exit()
+B6 = Button(window, text = "Project:Mango",command = Mango)
+B6.grid(column=2, row=2)
+# App Manager
 
+
+# Shutdown
 def end():
     exit()
 B4 = Button(window, text = "End Session",command = end)
 B4.grid(column=1, row=4)
 
-# display os name and version
-sysver = Label(window, text = "Beluga v 0.4")
-sysver.grid(column=3, row=1)
+
+# Misc
 
 
 window.mainloop()
+
 
