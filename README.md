@@ -15,4 +15,4 @@ beluga.py windows version = 100% working tested
 
 beluga.py macos version = 100% kind of? working tested some features are broken and due to such are currently removed until further notice
 
-beluga.py linux version = ?% unknown not tested
+beluga.py linux version = ?% unknown not testable
