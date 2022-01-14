@@ -5,7 +5,6 @@ import webbrowser
 import tkinter as tk
 from tkinter import ttk
 import os
-from user import *
 # variables
 
 # find time
