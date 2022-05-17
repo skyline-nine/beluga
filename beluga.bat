@@ -13,11 +13,11 @@ pause
 
 
 :start
-echo welcome to beluga os v0.2
+echo welcome to beluga os v0.3
 
 pause
 :MainMenu
-title beluga os v0.2
+title beluga os v0.3
 echo clock
 echo ldate
 echo open File hunter (FH)
