@@ -1,71 +1,72 @@
-import os
+from tkinter import *
+from tkinter import messagebox
 from datetime import datetime
-i = 1
-e = 1
+import webbrowser
+import tkinter as tk
+from tkinter import ttk
+import os
+# variables
+
+# find time
 now = datetime.now()
-def cls():
-  os.system("clear")
-  os.system("cls")
-def file():
-  if i == 1:
-    l = input("Enter the file name or location of the file: ")
-    t = input(" r = read\n a = append\n w = write\n x = create\n d = delete file\n exit = leave\n")
-    if t == "w" or t == "a":
-        wd = input("What would you like to add: ")
-        f = open(l,t)
-        f.write(wd)
-    elif t == "r":
-        f = open(l,t)
-        print(f.read())
-    elif t == "d":
-      if os.path.exists(l):
-        os.remove(l)
-        print("file deleted")
-      else:
-        print("The file does not exist")
-    elif t == "x":     
-        f = open(l,t)
-  else:
-    print("error")
-def IDE():
-  ide = input("Type command:")
 
-  if ide == "/test":
-    print("test complete")
+# window options
+window = Tk()
+window.title("Beluga V0.6")
+window.configure(width=500, height=500)
+window.configure(bg='lightblue')
 
-  elif ide == "/help":
-    print("/test: test command \n/help: get a list of commands \n/say: type in a set of words and the machine will repeat them")
-    print("/math enter a calculation and you will get answer in return")
-    print("/clear to clear screen * only for linux *\n/exit to exit program")
-    print("/time tell the time \n/date tell date")
-    print("/file locate and create and edit files")
+# name
+
+
+# display time
+def st():
+    messagebox.showinfo("Time", now.strftime("%H:%M:%S"))
+B1 = Button(window, text = "Time", command = st)
+B1.configure(bg='lightblue')
+B1.grid(column=1, row=1)
+
+# display date
+def sd():
+    messagebox.showinfo("Date", now.strftime("%Y-%m-%d"))
+B2 = Button(window, text = "Date", command = sd)
+B2.configure(bg='lightblue')
+B2.grid(column=1, row=2)
+
+# Web Sweeper
+def NF():
+    NF = Tk()
+    text2 = Entry(NF)
+    text2.pack()
+    text2.focus_set()
     
+    def recall():
+        webbrowser.open(text2.get())
+    B7 = Button(NF, text = "Search", width = 10, command = recall)
+    B7.pack()
+    
+    mainloop()
+B5 = Button(window, text = "Web Sweeper", command = NF)
+B5.configure(bg='lightblue')
+B5.grid(column=1, row=3)
 
-  elif ide == "/say":
-    prnt=input("")
-    print(prnt)
-
-  elif ide =="/math":
-    math=input("Enter Math Problem here:")
-    if math == "0/0":
-      print("∞")
-    else:
-      print(eval(math))
-  elif ide == "/clear":
-    cls()
-
-  elif ide == "/time":
-    print(now.strftime("%H:%M:%S"))
-  elif ide == "/date":
-    print(now.strftime("%Y-%m-%d"))
-  elif ide =="/file":
-    file()
-        
-  elif ide == "/exit" or "/kill" or "/close":
+# Project:Mango
+def Mango():
+    os.system("python Mango.py")
     exit()
-  else:
-    print("Error type help for a list of commands")
+B6 = Button(window, text = "Project:Mango",command = Mango)
+B6.grid(column=2, row=2)
+# App Manager
 
-    
-while i == 1:
-  IDE()
+
+# Shutdown
+def end():
+    exit()
+B4 = Button(window, text = "End Session",command = end)
+B4.grid(column=1, row=4)
+
+
+# Misc
+
+
+window.mainloop()
