@@ -13,12 +13,14 @@ A universal version of beluga is being worked on.
 
 # Stablility
 
-beluga.py windows version = 100% Working tested
+Beluga.py windows version = 100% Working tested
 
-beluga.py macos version = 85% Working tested some features are unable to be tested 
+Beluga.py macos version = 85% Working tested some features are unable to be tested 
 
 due to certain hardware limitations 
 
 and as such are not guaranteed to work
 
-beluga.py linux version = ?% Unknown not testable
+Beluga.py linux version = ?% Unknown not testable please test this on linux 
+
+for the abilty to fix errors on linux
